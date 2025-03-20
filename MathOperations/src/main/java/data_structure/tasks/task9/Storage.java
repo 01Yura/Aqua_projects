@@ -5,11 +5,11 @@ import java.util.Deque;
 
 public class Storage {
     Deque<String> doneStorage;
-    Deque<String> redoStorage;
+    Deque<String> undoneStorage;
 
     public Storage() {
         this.doneStorage = new ArrayDeque<>();
-        this.redoStorage = new ArrayDeque<>();
+        this.undoneStorage = new ArrayDeque<>();
     }
 
     public void doAction(String action) {
@@ -17,11 +17,11 @@ public class Storage {
     }
 
     public void ctrlZ() {
-        this.redoStorage.add(doneStorage.pollLast());
+        this.undoneStorage.add(doneStorage.pollLast());
     }
 
     public void ctrlY() {
-        this.doneStorage.add(this.redoStorage.pollLast());
+        this.doneStorage.add(this.undoneStorage.pollLast());
     }
 
     public void showStorage() {

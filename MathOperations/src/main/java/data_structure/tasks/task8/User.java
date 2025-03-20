@@ -10,4 +10,9 @@ public class User {
     public int getIP() {
         return IP;
     }
+
+    @Override
+    public String toString() {
+        return String.valueOf(IP);
+    }
 }
