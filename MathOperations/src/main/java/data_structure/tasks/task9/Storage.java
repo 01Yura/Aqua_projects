@@ -17,7 +17,7 @@ public class Storage {
     }
 
     public void ctrlZ() {
-        this.undoneStorage.add(doneStorage.pollLast());
+        this.undoneStorage.add(this.doneStorage.pollLast());
     }
 
     public void ctrlY() {

@@ -21,6 +21,6 @@ public class Main {
         storage.showAllGamers();
 
         storage.showMAxRateGamer();
-        
+
     }
 }

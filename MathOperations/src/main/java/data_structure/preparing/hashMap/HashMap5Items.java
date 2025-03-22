@@ -21,6 +21,8 @@ public class HashMap5Items {
             System.out.println();
 
             hashMap.forEach((key, value) -> System.out.println(key + " " + value));
+            System.out.println();
+
         }
     }
 }

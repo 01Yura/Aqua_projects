@@ -10,7 +10,7 @@ public class Main {
     public static void main(String[] args) {
 //        Create queue
         Queue<Integer> storage = new ArrayDeque<>();
-//        Populate it (pacient takes the ticket)
+//        Populate it (patient takes the ticket)
         storage.offer(1);
         storage.offer(2);
         storage.offer(3);

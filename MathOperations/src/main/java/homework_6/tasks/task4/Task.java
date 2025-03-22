@@ -4,10 +4,17 @@ public class Task implements Comparable<Task> {
     private String taskName;
     private int taskPriority;
 
-
     public Task(String taskName, int taskPriority) {
         this.taskName = taskName;
         this.taskPriority = taskPriority;
+    }
+
+    public String getTaskName() {
+        return taskName;
+    }
+
+    public int getTaskPriority() {
+        return taskPriority;
     }
 
     @Override

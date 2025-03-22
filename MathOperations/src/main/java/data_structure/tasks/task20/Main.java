@@ -6,15 +6,15 @@ import java.util.Set;
 
 public class Main {
     public static void main(String[] args) {
-        Set<Integer> storage = new HashSet<>();
+        Set<String> storage = new HashSet<>();
         Scanner scanner = new Scanner(System.in);
-        Integer element;
+        String element;
 
         while (true) {
             System.out.println("Enter some number: ");
-            element = scanner.nextInt();
+            element = scanner.nextLine();
 
-            if (element.equals(0)) {
+            if (element.isBlank()) {
                 break;
             }
 

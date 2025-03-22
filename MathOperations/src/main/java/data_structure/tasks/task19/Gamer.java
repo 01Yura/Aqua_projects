@@ -27,3 +27,4 @@ public class Gamer implements Comparable<Gamer> {
         return "Gamer " + name + " with rate " + rate;
     }
 }
+

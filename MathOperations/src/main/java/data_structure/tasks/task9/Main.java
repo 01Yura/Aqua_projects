@@ -33,7 +33,7 @@ public class Main {
         storage.doAction("Yura.");
 //        Show the text
         storage.showStorage();
-
+        System.out.println();
 
     }
 }

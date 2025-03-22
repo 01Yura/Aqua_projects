@@ -7,7 +7,7 @@ import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.Scanner;
 
-public class Main {
+public class WithScannerSimple {
     public static void main(String[] args) {
         Deque<String> storage = new ArrayDeque<>();
 
@@ -18,16 +18,16 @@ public class Main {
             System.out.println("Enter the bracket: ");
             bracket = scanner.nextLine();
 
-            if (bracket.equals("stop")) {
+            if (bracket.isBlank()) {
                 break;
             }
 
             if (storage.isEmpty()) {
-                storage.addLast(bracket);
-            } else if (storage.getLast().equals(bracket)) {
-                storage.add(bracket);
+                storage.push(bracket);
+            } else if (storage.peek().equals(bracket)) {
+                storage.push(bracket);
             } else {
-                storage.removeLast();
+                storage.pop();
             }
 
         }
