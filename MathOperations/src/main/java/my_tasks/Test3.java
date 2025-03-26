@@ -5,6 +5,8 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class Test3 {
+
+
     public static void main(String[] args) {
 
 //        Создаем массив
@@ -33,5 +35,9 @@ public class Test3 {
 //        Пробуем изменить НЕИЗМЕНЯЕМЫЙ list1, добавив элемент (не работает, выдает UnsupportedOperationException)
 //        list1.add(6);
 //        System.out.println(list1);
+
+
     }
+
+
 }

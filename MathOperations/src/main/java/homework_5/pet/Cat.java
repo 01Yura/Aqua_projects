@@ -1,6 +1,6 @@
 package homework_5.pet;
 
-public class Cat extends Pet {
+public class Cat extends Pet implements Playable {
     public Cat(String name) {
         super(name);
     }
@@ -8,11 +8,6 @@ public class Cat extends Pet {
     @Override
     public void eat() {
         System.out.println(this.getName() + " is eating wet food");
-    }
-
-    @Override
-    public void walk() {
-        System.out.println(this.getName() + " is walkin on the rooftops");
     }
 
     @Override

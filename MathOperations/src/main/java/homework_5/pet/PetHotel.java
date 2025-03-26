@@ -1,22 +1,34 @@
 package homework_5.pet;
 
 public class PetHotel {
+
+    private Pet pet;
+
     public void addPet(Pet pet) {
+        this.pet = pet;
         System.out.println(pet.getName() + " has been added to the Pet Hotel");
     }
 
-    public void feedPet(Pet pet) {
+    public void feedPet() {
         System.out.println("We are feeding the " + pet.getName());
-        pet.eat();
+        this.pet.eat();
     }
 
-    public void walkWithPet(Pet pet) {
-        System.out.println("We are walking with the " + pet.getName());
-        pet.walk();
+    public void walkWithPet() {
+        if (this.pet instanceof Walkable) {
+            Walkable walkablePet = (Walkable) this.pet;
+            walkablePet.walk();
+        } else {
+            System.out.println("Error! " + this.pet.getName() + " is not walking");
+        }
     }
 
-    public void playWithPet(Pet pet) {
-        System.out.println("We are playing with the " + pet.getName());
-        pet.play();
+    public void playWithPet() {
+        if (this.pet instanceof Playable) {
+            Playable playablePet = (Playable) this.pet;
+            playablePet.play();
+        } else {
+            System.out.println("Error! " + this.pet.getName() + " is not playing");
+        }
     }
 }

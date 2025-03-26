@@ -13,7 +13,4 @@ public abstract class Pet {
 
     public abstract void eat();
 
-    public abstract void walk();
-
-    public abstract void play();
 }

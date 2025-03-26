@@ -3,13 +3,13 @@ public class Conversion {
 //    минуты=секунды/60.
 //    Вызовите метод в main и выведите результат.
 
-    static int convertSecondsToMinutes(int seconds) {
-        int mins = seconds / 60;
+    static double convertSecondsToMinutes(int seconds) {
+        double mins = seconds / 60.0;
         return mins;
     }
 
     public static void main(String[] args) {
-        System.out.println(convertSecondsToMinutes(3600));
+        System.out.println(convertSecondsToMinutes(3500));
     }
 
 

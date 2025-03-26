@@ -7,11 +7,15 @@ public class Main {
         Cat myCat = new Cat("Cat Murzik");
 
         myPetHotel.addPet(myCat);
-        myPetHotel.addPet(myDog);
+//        myPetHotel.addPet(myDog);
         System.out.println();
 
-        myPetHotel.walkWithPet(myDog);
-        myPetHotel.feedPet(myCat);
-        myPetHotel.playWithPet(myDog);
+        myPetHotel.walkWithPet();
+        System.out.println();
+
+        myPetHotel.feedPet();
+        System.out.println();
+
+        myPetHotel.playWithPet();
     }
 }
