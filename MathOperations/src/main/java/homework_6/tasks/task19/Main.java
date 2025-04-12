@@ -20,5 +20,6 @@ public class Main {
         gamerList.print();
 
         gamerList.showTheMostRateGamer();
+        System.out.println();
     }
 }

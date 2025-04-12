@@ -27,7 +27,7 @@ public class Storage {
     }
 
     public void showIdStorage() {
-        System.out.println("Storage contains the following id's: ");
+        System.out.println("GenericClass contains the following id's: ");
         this.storage.forEach(System.out::println);
     }
 }

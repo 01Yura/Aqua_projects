@@ -1,4 +1,4 @@
-package practice5.exceptions.task1;
+package practice_5.exceptions.task1;
 
 //1. Обработка проверяемого исключения
 //Условие задачи:

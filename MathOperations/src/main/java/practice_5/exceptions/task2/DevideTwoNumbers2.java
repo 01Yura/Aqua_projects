@@ -1,4 +1,4 @@
-package practice5.exceptions.task2;
+package practice_5.exceptions.task2;
 
 public class DevideTwoNumbers2 {
     public static void main(String[] args) {

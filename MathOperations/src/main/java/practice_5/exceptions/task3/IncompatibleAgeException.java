@@ -1,4 +1,4 @@
-package practice5.exceptions.task3;
+package practice_5.exceptions.task3;
 
 // This is checked exception
 
