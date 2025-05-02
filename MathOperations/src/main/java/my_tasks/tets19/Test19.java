@@ -30,5 +30,10 @@ public class Test19 {
         int max = Arrays.stream(array).max().getAsInt();
         System.out.println(max);
 
+        long timeStart = System.nanoTime();
+        long timeEnd = System.nanoTime();
+        System.out.println(timeStart);
+        System.out.println(timeEnd);
+
     }
 }
