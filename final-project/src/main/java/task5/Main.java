@@ -25,5 +25,8 @@ public class Main {
         mVideoShop.filterProductsByCategory("PC devices").forEach(System.out::println);
         System.out.println("------------------------------------");
         mVideoShop.filterProductsByPrice(99,999).entrySet().forEach(System.out::println);
+        System.out.println();
+
+        mVideoShop.sortByPrice().entrySet().forEach(System.out::println);
     }
 }

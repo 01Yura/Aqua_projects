@@ -11,7 +11,7 @@ public class Main {
         Product p2 = new Product("Electronics", "Smartphone", "Black", 6, 800.00);
         Product p3 = new Product("Clothing", "T-Shirt", "Red", 42, 19.99);
         Product p4 = new Product("Clothing", "Jeans", "Blue", 32, 49.99);
-        Product p5 = new Product("Home", "Vacuum Cleaner", "Red", 20, 199.99);
+        Product p5 = new Product("Home", "Vacuum Cleaner", "Red", 20, 49.55);
         Product p6 = new Product("Home", "Blender", "Green", 10, 59.99);
         Product p7 = new Product("Sports", "Football", "Brown", 5, 25.00);
         Product p8 = new Product("Sports", "Bicycle", "Blue", 100, 800.00);
@@ -36,10 +36,24 @@ public class Main {
         list.forEach(System.out::println);
         System.out.println();
 
-        System.out.println("Sorting by name using Comparator ans Lambda: ");
+        System.out.println("Sorting by name using Comparator and Lambda: ");
         list.sort(new Product.SortByName().thenComparing(Comparator.comparing(Product::getCategory)));
         list.forEach(System.out::println);
         System.out.println();
+
+
+        System.out.println("Stream but with Comparator and reverse:");
+        list.stream().sorted(new Product.SortByName().reversed()).forEach(System.out::println);
+        System.out.println();
+
+        System.out.println("Stream with Lambda:");
+        list.stream()
+                .filter(product -> product.getPrice() > 700)
+                .sorted(Comparator.comparing(Product::getSize)).forEach(System.out::println);
+        System.out.println();
+
+
+        list.stream().sorted(new Product.SortByName()).forEach(System.out::println);
 
 
     }

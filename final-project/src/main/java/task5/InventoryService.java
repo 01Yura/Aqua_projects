@@ -92,6 +92,17 @@ public class InventoryService {
                 ));
 
     }
+
+//    Дополнительные методы не связанные с заданием
+
+    public Map<String, List<Product>> sortByPrice(){
+        for (Map.Entry<String, List<Product>> entry : map.entrySet()) {
+            List<Product> list = entry.getValue();
+            map.put(entry.getKey(), list.stream().sorted(Comparator.comparing(Product::getPrice)).toList());
+        }
+
+        return map;
+    }
 }
 
 
