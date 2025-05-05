@@ -52,12 +52,19 @@ public class InventoryService {
     }
 
     public List<Product> filterProductsByCategory(String category) {
-        List<Product> list = new ArrayList<>();
-        for (Map.Entry<String, List<Product>> entry : map.entrySet()) {
-            if (entry.getKey().equals(category)) {
-                list = entry.getValue();
-            }
-        }
+//        List<Product> list = new ArrayList<>();
+//        for (Map.Entry<String, List<Product>> entry : map.entrySet()) {
+//            if (entry.getKey().equals(category)) {
+//                list = entry.getValue();
+//            }
+//        }
+//        return list;
+
+        List<Product> list = map.values().stream()
+                .flatMap(products -> products.stream())
+                .filter(product -> product.getCategory().equals(category))
+                .collect(Collectors.toList());
+
         return list;
     }
 
@@ -102,6 +109,22 @@ public class InventoryService {
         }
 
         return map;
+    }
+
+    public List<Product> filterProductsByPriceReturnList(int min, int max){
+         List<Product> list = map.values().stream()
+                .flatMap(l -> l.stream())
+                .filter(product -> product.getPrice()>=min && product.getPrice()<= max)
+                 .sorted(Comparator.comparing(Product::getPrice))
+                .collect(Collectors.toList());
+
+        return list;
+    }
+
+    public Map<String, List<Product>> groupByCategory(){
+        return map.values().stream()
+                .flatMap(e-> e.stream())
+                .collect(Collectors.groupingBy(product -> product.getCategory()));
     }
 }
 
