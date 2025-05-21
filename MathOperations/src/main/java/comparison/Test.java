@@ -37,5 +37,6 @@ public class Test {
         System.out.println(myStack);
         myStack.forEach(System.out::println);
 
+
     }
 }

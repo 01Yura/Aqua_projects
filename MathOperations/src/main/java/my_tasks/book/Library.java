@@ -13,9 +13,8 @@ public class Library {
     }
 
     public void addBook(Book... books) {
-        boolean result = false;
         for (Book book : books) {
-            result = listAllBooks.add(book);
+            listAllBooks.add(book);
         }
     }
 
@@ -32,7 +31,6 @@ public class Library {
     }
 
     public boolean giveBookToPerson(String title, String name) {
-        boolean flag = false;
         for (Book book : listAllBooks) {
             if (book.getTitle().equals(title) && book.isAvailable()) {
                 mapUnavailableBooks.putIfAbsent(name, new ArrayList<>());
@@ -40,29 +38,26 @@ public class Library {
                 book.setAvailable(false);
                 book.setUser(name);
                 System.out.println(name + " took book " + book.getTitle());
-                flag = true;
-                return flag;
+                return true;
             }
         }
 
 
-        for (
-                Book book2 : listAllBooks) {
+        for (Book book2 : listAllBooks) {
             if (book2.getTitle().equals(title) && !book2.isAvailable()) {
                 System.out.println(name + ", someone has already taken this book");
-                flag = false;
-                return flag;
+                return false;
             }
         }
         System.out.println(name + " there is no such book in library");
-        return flag;
+        return false;
     }
 
     public boolean takeBookFromPerson(String title, String name) {
         for (Book book : listAllBooks) {
             if (book.getTitle().equals(title) && !book.isAvailable()) {
                 book.setAvailable(true);
-                book.setUser(null);
+                book.setUser(name);
                 mapUnavailableBooks.get(name).remove(book);
                 System.out.println("User " + name + " returned the book " + title);
                 return true;
@@ -79,12 +74,12 @@ public class Library {
     public void showAllAvailableBooks() {
         listAllBooks.stream()
                 .sorted(Comparator.comparing(Book::getId))
-                .filter(book -> book.isAvailable() == true)
+                .filter(book -> book.isAvailable())
                 .forEach(System.out::println);
     }
 
     public void showAllUnavailableBooks() {
-        listAllBooks.stream().filter(book -> book.isAvailable() == false).forEach(System.out::println);
+        listAllBooks.stream().filter(book -> !book.isAvailable()).forEach(System.out::println);
     }
 
     public void sortBooksByAge() {
@@ -95,13 +90,19 @@ public class Library {
     public void groupBooksByAge() {
         Map<Integer, List<Book>> map;
         map = listAllBooks.stream().collect(Collectors.groupingBy(Book::getAgeOfIssue));
-        map.entrySet().forEach(System.out::println);
+        map.forEach((integer, books) -> {
+            System.out.println("Age of issue: " + integer);
+            System.out.println(books);
+        });
     }
 
     public void partitionBooksByAvailability() {
         Map<Boolean, List<Book>> map;
-        map = listAllBooks.stream().collect(Collectors.partitioningBy(book -> book.isAvailable() == true));
-        map.entrySet().forEach(System.out::println);
+        map = listAllBooks.stream().collect(Collectors.partitioningBy(book -> book.isAvailable()));
+        map.forEach((key, value) -> {
+            System.out.println("Available: " + key);
+            System.out.println(value);
+        });
     }
 
 }

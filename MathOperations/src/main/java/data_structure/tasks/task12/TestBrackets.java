@@ -5,7 +5,7 @@ import java.util.HashMap;
 
 public class TestBrackets {
 
-    public static boolean checkBracketSiquence(String string) {
+    public static boolean checkBracketSequence(String string) {
         HashMap<Character, Character> map = new HashMap<>();
         map.put(')', '(');
         map.put(']', '[');
@@ -14,8 +14,7 @@ public class TestBrackets {
 
         ArrayDeque<Character> stack = new ArrayDeque<>();
 
-        char[] array = new char[string.length()];
-        array = string.toCharArray();
+        char[] array = string.toCharArray();
 
         boolean isValid = true;
 
@@ -53,9 +52,9 @@ public class TestBrackets {
 
     public static void main(String[] args) {
 
-        System.out.println(checkBracketSiquence("([{}])"));
-        System.out.println(checkBracketSiquence("([[{}])"));
-        System.out.println(checkBracketSiquence("([{}]))"));
+        System.out.println(checkBracketSequence("([{}])"));
+        System.out.println(checkBracketSequence("([[{}])"));
+        System.out.println(checkBracketSequence("([{}]))"));
 
     }
 }

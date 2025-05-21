@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class SwitchTaskSolver {
     public static void main(String[] args) {
 //        checkDayOfWeek();
-//        printPlanetInfo();
+        printPlanetInfo();
 //        calculate();
 
 
@@ -30,7 +30,7 @@ public class SwitchTaskSolver {
 
     public static void printPlanetInfo() {
         Scanner scanner = new Scanner(System.in);
-        Planets planet = Planets.valueOf(scanner.nextLine());
+        Planets planet = Planets.valueOf(scanner.nextLine().toUpperCase());
 
         switch (planet) {
             case MERCURY -> Planets.MERCURY.displayPlanetInfo();
