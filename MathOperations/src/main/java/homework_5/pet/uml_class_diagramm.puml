@@ -1,0 +1,43 @@
+@startuml
+class homework_5.pet.Dog {
++ void eat()
++ void walk()
+}
+
+interface homework_5.pet.Walkable {
++ void walk()
+}
+
+interface homework_5.pet.Playable {
++ void play()
+}
+
+class homework_5.pet.Cat {
++ void eat()
++ void play()
+}
+
+class homework_5.pet.PetHotel {
+- Pet pet
++ void addPet(Pet)
++ void feedPet()
++ void walkWithPet()
++ void playWithPet()
+}
+
+
+abstract class homework_5.pet.Pet {
+- String name
++ String getName()
++ {abstract}void eat()
+}
+
+
+
+
+
+homework_5.pet.Walkable <|.. homework_5.pet.Dog
+homework_5.pet.Pet <|-- homework_5.pet.Dog
+homework_5.pet.Playable <|.. homework_5.pet.Cat
+homework_5.pet.Pet <|-- homework_5.pet.Cat
+@enduml
