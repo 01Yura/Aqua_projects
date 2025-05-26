@@ -8,6 +8,8 @@ public class Anagramma {
     public static void main(String[] args) {
         System.out.println(isAnagramm("FDSA", "dsfa"));
 
+        int[] array = new int[5];
+        
     }
 
 
