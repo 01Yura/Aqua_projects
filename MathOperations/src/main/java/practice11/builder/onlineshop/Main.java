@@ -9,5 +9,6 @@ public class Main {
                 .setGoodName("Car")
                 .setPaymentMethod("Cash").build();
         System.out.println(flexibleOrder);
+
     }
 }
