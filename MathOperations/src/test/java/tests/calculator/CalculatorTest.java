@@ -1,5 +1,6 @@
 package tests.calculator;
 
+import no_bugs.tests.calculator.Calculator;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
@@ -10,10 +11,12 @@ class CalculatorTest {
 
     Calculator calculator;
 
+
     @BeforeEach
     void setUp() {
         calculator = new Calculator();
     }
+
 
     @ParameterizedTest
     @CsvSource({"1,2,3", "10,11,21"})

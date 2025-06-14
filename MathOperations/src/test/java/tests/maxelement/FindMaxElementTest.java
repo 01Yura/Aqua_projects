@@ -1,6 +1,7 @@
 package tests.maxelement;
 
 
+import no_bugs.tests.maxelement.FindMaxElement;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -21,6 +22,7 @@ class FindMaxElementTest {
         );
     }
 
+
     /*
     Positive:
     [3,5,7,2] -> 7
@@ -36,6 +38,7 @@ class FindMaxElementTest {
         assertEquals(expected, actual);
     }
 
+
     @Test
     void findMaxShouldThrowExceptionWhenArrayIsEmpty() {
         int[] emptyArray = new int[0];
@@ -43,6 +46,4 @@ class FindMaxElementTest {
             new FindMaxElement().findMax(emptyArray);
         }, "Method should throw NoSuchElementException");
     }
-
-
 }

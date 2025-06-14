@@ -1,5 +1,6 @@
 package tests.voweltest;
 
+import no_bugs.tests.voweltest.VowelClass;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
@@ -27,6 +28,7 @@ class VowelClassTest {
         int actual = new VowelClass().countVowels(input);
         assertEquals(expected, actual);
     }
+
 
     @Test
     void UserCanNotEnterNullString() {

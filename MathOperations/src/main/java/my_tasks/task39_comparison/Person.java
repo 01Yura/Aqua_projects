@@ -7,10 +7,12 @@ public class Person {
     private String name;
     private int age;
 
+
     public Person(int age, String name) {
         this.age = age;
         this.name = name;
     }
+
 
     public static void main(String[] args) {
         Person person1 = new Person(20, "Yura");
@@ -29,6 +31,7 @@ public class Person {
         treeSet.forEach(System.out::println);
     }
 
+
     @Override
     public String toString() {
         return "Person{" +
@@ -37,9 +40,11 @@ public class Person {
                 '}';
     }
 
+
     public String getName() {
         return name;
     }
+
 
     public int getAge() {
         return age;

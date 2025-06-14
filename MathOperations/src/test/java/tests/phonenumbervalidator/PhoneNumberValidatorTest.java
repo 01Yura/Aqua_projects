@@ -18,6 +18,7 @@ package tests.phonenumbervalidator;
  *
  * */
 
+import no_bugs.tests.phonenumbervalidator.PhoneNumberValidator;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
@@ -34,6 +35,7 @@ class PhoneNumberValidatorTest {
     void isValidPhoneNumberReturnsTrueWhenPhoneNumberIsValid(String phoneNumber) {
         assertTrue(new PhoneNumberValidator().isValidPhoneNumber(phoneNumber));
     }
+
 
     @ParameterizedTest
     @ValueSource(strings = {

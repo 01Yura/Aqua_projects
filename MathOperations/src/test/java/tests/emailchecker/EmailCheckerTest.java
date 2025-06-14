@@ -13,6 +13,7 @@ public boolean isValidEmail(String email) {
 null
 */
 
+import no_bugs.tests.emailchecker.EmailChecker;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;

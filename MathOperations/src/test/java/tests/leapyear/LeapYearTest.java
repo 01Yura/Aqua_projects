@@ -14,6 +14,7 @@ public boolean isLeapYear(int year) {
 Года, которые делятся на 100, но не на 400 (1900, 2100)
 */
 
+import no_bugs.tests.leapyear.LeapYear;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -35,6 +36,7 @@ class LeapYearTest {
         );
     }
 
+
     /*
      * Positive:
      * 2021 -> false
@@ -47,6 +49,5 @@ class LeapYearTest {
     void userCanCheckIfTheYearIsLeapOrNot(int year, boolean expected) {
         boolean actual = new LeapYear().isLeapYear(year);
         assertEquals(expected, actual);
-
     }
 }

@@ -1,5 +1,6 @@
 package tests.commonpackage;
 
+import no_bugs.tests.commonpackage.CommonClass1;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -20,6 +21,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class CommonClass1Test {
     CommonClass1 commonClass;
 
+
     static Stream<Arguments> ArgsForUserCanSortValidListOfStrings() {
         return Stream.of(
                 Arguments.of(List.of("Java", "C", "Python"), List.of("C", "Java", "Python")),
@@ -27,6 +29,7 @@ class CommonClass1Test {
                 Arguments.of(List.of(), List.of())
         );
     }
+
 
     public static Stream<Arguments> ArgsForUserCanFilterEvenNumbersFromValidList() {
         return Stream.of(
@@ -37,10 +40,12 @@ class CommonClass1Test {
         );
     }
 
+
     @BeforeEach
     void setUp() {
         commonClass = new CommonClass1();
     }
+
 
     @ParameterizedTest
     @MethodSource("ArgsForUserCanSortValidListOfStrings")
@@ -49,6 +54,7 @@ class CommonClass1Test {
         List<String> actual = commonClass.sortByLength(list);
         assertEquals(expected, actual);
     }
+
 
     @ParameterizedTest
     @MethodSource("ArgsForUserCanFilterEvenNumbersFromValidList")

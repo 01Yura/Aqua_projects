@@ -25,6 +25,7 @@ public int findSecondMax(int[] numbers) {
  *
  * */
 
+import no_bugs.tests.secondmaxnumber.SecondMaxNumber;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -43,6 +44,7 @@ class SecondMaxNumberTest {
         );
     }
 
+
     public static Stream<Arguments> ArgsForFindSecondMaxShouldThrowExceptionIfArrayHasOneElement() {
         return Stream.of(
                 Arguments.of(new int[]{5})
@@ -56,12 +58,12 @@ class SecondMaxNumberTest {
         assertEquals(expected, new SecondMaxNumber().findSecondMax(array));
     }
 
+
     @ParameterizedTest
     @MethodSource("ArgsForFindSecondMaxShouldThrowExceptionIfArrayHasOneElement")
     void findSecondMaxShouldThrowExceptionIfArrayHasOneElement(int[] array) {
         assertThrows(IllegalArgumentException.class, () -> {
             new SecondMaxNumber().findSecondMax(array);
         }, "Method should throw NoSuchElementException");
-
     }
 }
