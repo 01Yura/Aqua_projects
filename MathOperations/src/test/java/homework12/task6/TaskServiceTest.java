@@ -1,5 +1,7 @@
 package homework12.task6;
 
+import no_bugs.homework12.task6.Task;
+import no_bugs.homework12.task6.TaskService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;

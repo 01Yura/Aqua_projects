@@ -1,5 +1,7 @@
 package homework13_same_as_12.task1;
 
+import no_bugs.homework13_same_as_12.task1.Entity;
+import no_bugs.homework13_same_as_12.task1.EntityManager;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
